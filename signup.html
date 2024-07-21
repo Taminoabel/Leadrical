@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Static/Image/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadrical | Signup</title>
+    <link rel="stylesheet" href="Static/Style/style.css">
+</head>
+<body>
+    <div id="signup-container">
+        <div id="signup-box">
+            <img src="Static/Image/icon.png" alt="Logo" id="logo">
+            <h2 id="signup-heading">Join us!</h2>
+            <p id="signup-paragraph">Find new potential customers today<br>with just a simple click.</p>
+            <form action="#">
+                <input type="text" placeholder="Firstname" name="fname" id="signup-firstname">
+                <input type="text" placeholder="Lastname" name="lname" id="signup-lastname" required>
+                <input type="email" placeholder="Email" id="signup-email" required>
+                <div id="password-container">
+                    <input type="password" placeholder="Password" id="signup-password" required>
+                </div>
+                <button type="submit" id="signup-button">Start Free Trial</button>
+            </form>
+            <div id="alternative-signup">
+                <p id="alternative-signup-text">or Sign Up with</p>
+                <button id="alt-signup-github">GitHub</button>
+                <button id="alt-signup-google">Google</button>
+            </div>
+            <div id="signup-footer">
+                <p id="signup-footer-text">Already have an account? <a href="login.html">Login instead</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
