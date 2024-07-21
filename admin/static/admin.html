@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="sidebar">
+        <div id="logo">
+            <img src="image/logo.png" alt="Company Logo">
+
+            <button style="font-size: xx-large;" id="close-sidebar">X</button>
+        </div>
+        
+        
+        <nav id="navigation">
+            <div class="nav-link" onclick="showSection('overview')">
+                <i class="fas fa-home"></i> Dashboard
+            </div>
+            <div class="nav-link" onclick="showSection('traffic')">
+                <i class="fas fa-chart-line"></i> Traffic
+            </div>
+            <div class="nav-link" onclick="showSection('leads')">
+                <i class="fas fa-user-friends"></i> Leads
+            </div>
+            <div class="nav-link" onclick="showSection('sales')">
+                <i class="fas fa-shopping-cart"></i> Sales
+            </div>
+            <div class="nav-link" onclick="showSection('affiliate')">
+                <i class="fas fa-network-wired"></i> Affiliate Program
+            </div>
+        </nav>
+        <div id="user-profile">
+            <div class="nav-link">
+                <i class="fas fa-user"></i> Tammy Abel
+            </div>
+            <button id="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+
+    <div class="cotainer1-header">
+    <header>
+        <div id="hamburger">
+            <div class=" burger"></div>
+            <div class="second-burger burger"></div>
+            <div class="third-burger burger"></div>
+        </div>
+
+        <div id="over-welcome">
+            <h1>Welcome, <span style="color: #0F7579;">Abel</span></h1>
+            <p>Get insights on your activities and track your progress</p>
+             </div> 
+
+        <div class="header-icons">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-cog"></i>
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+    </header>
+    </div>
+
+    <main>
+        
+        <br><br>
+        <section id="overview" class="content-section active">
+             <div style="width: 100%;">
+                <div class="Activate-acct">
+                <div class="activate-write"><h3>Activate your leadrical account Now!!</h3>
+                <p>We noticed you don't have an active subscription.
+                    Choose a plan and activate all features
+                </p></div>
+                <a class="activate" href="#">Activate Account</a>
+             </div>
+            </div>
+
+
+            <div class="metrics">
+                <div class="metric1">
+                    <h2>Total Traffic</h2>
+                    <p>123,456</p>
+                </div>
+                <div class="metric2">
+                    <h2>Total Leads</h2>
+                    <p>78,910</p>
+                </div>
+                <div class="metric3">
+                    <h2>Total Sales</h2>
+                    <p>$34,567</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Summary</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Traffic</th>
+                            <th>Leads</th>
+                            <th>Sales</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr>
+                        <td><p>5th jan, 2024</p></td>
+                        <td>123,111</td>
+                        <td>15,000</td>
+                        <td>$30,000</td>
+                        </tr>                  
+                        <tr>
+                        <td><p>8th Feb, 2024</p></td>
+                        <td>12,001</td>
+                        <td>10,000</td>
+                        <td>$5,000</td>
+                        </tr>                  
+                        <tr>
+                        <td><p>5 Mar, 2024</p></td>
+                        <td>123,001</td>
+                        <td>15,000</td>
+                        <td>$30,000</td>
+                        </tr>                  
+                        <tr>
+                        <td><p>6th Apr, 2024</p></td>
+                        <td>112,001</td>
+                        <td>17,000</td>
+                        <td>$35,000</td>
+                        </tr>                  
+                        <tr>
+                        <td><p>15th May, 2024</p></td>
+                        <td>120,001</td>
+                        <td>30,000</td>
+                        <td>$3,000</td>
+                        </tr>                  
+                        <tr>
+                        <td><p>2nd Jun, 2024</p></td>
+                        <td>12,001</td>
+                        <td>15,000</td>
+                        <td>$30,000</td>
+                        </tr>                  
+
+                        <!-- Add rows dynamically as needed -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h2>Business Overview</h2>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+            <section id="traffic" class="content-section">
+                <div style="width: 100%;">
+                    <div class="Activate-acct">
+                    <div class="activate-write"><h3>Activate your leadrical account Now!!</h3>
+                    <p>We noticed you don't have an active subscription.
+                        Choose a plan and activate all features
+                    </p></div>
+                    <a class="activate" href="#">Activate Account</a>
+                 </div>
+                </div>
+            <h1>Traffic</h1>
+            <div class="card">
+                <form>
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" id="website" name="website" placeholder="Enter your website URL" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Target Country:</label>
+                        <input type="text" id="country" name="country" placeholder="Enter the country" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="niche">Niche:</label>
+                        <input type="text" id="niche" name="niche" placeholder="Enter your niche" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="keywords">Keywords:</label>
+                        <input type="text" id="keywords" name="keywords" placeholder="Enter relevant keywords" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="demographics">Target Demographics:</label>
+                        <input type="text" id="demographics" name="demographics" placeholder="Enter target demographics" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">Upload Product Image:</label>
+                        <input type="file" id="product-image" name="product-image" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" placeholder="Write a brief description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="leads" class="content-section">
+            <div style="width: 100%;">
+                <div class="Activate-acct">
+                <div class="activate-write"><h3>Activate your leadrical account Now!!</h3>
+                <p>We noticed you don't have an active subscription.
+                    Choose a plan and activate all features
+                </p></div>
+                <a class="activate" href="#">Activate Account</a>
+             </div>
+            </div>
+            <h1>Leads</h1>
+        </section>
+
+
+        <section id="sales" class="content-section">
+            <div style="width: 100%;">
+                <!-- <div class="Activate-acct">
+                <div class="activate-write"><h3>Activate your leadrical account Now!!</h3>
+                <p>We noticed you don't have an active subscription.
+                    Choose a plan and activate all features
+                </p></div>
+                <a class="activate" href="#">Activate Account</a>
+             </div> -->
+            </div>
+
+            <div class="upload-excel-file">
+            <div id="container-upload-ex">
+                <h1>Upload Leads Excel File</h1>
+                <input type="file" id="fileInput" accept=".xlsx, .xls">
+                <button id="processButton" disabled>Process File</button>
+                <div id="overview-upload"></div>
+                <button id="proceedButton" style="display: none;">Proceed</button>
+            </div>
+            </div>
+        </section>
+
+
+        <section id="affiliate" class="content-section">
+            <div style="width: 100%;">
+                <div class="Activate-acct">
+                <div class="activate-write"><h3>Activate your leadrical account Now!!</h3>
+                <p>We noticed you don't have an active subscription.
+                    Choose a plan and activate all features
+                </p></div>
+                <a class="activate" href="#">Activate Account</a>
+             </div>
+            </div>
+            <div class="aff-dashboard">
+                <div>Dashboard</div>
+            <div>Marketing Material</div>
+            <div>Affiliate Report</div>
+            <div>Leaderboard</div>
+            </div>
+            
+            <h1>Affiliate Program</h1>
+        </section> 
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="script/admin.js"></script>
+</body>
+</html>
